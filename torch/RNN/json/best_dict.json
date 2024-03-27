@@ -1,1 +1,10 @@
-{"Epochs": 100, "Model": true, "WD": 5, "LR": 5, "Loss": 5}
+{
+    "Epochs": 1,
+    "Learning Rate": 0.001,
+    "Weight Decay": 1e-05,
+    "Batch Size": 4,
+    "First Dim": 16,
+    "Encode Dim": 128,
+    "Model": true,
+    "Loss": 0.3143013259586023
+}
