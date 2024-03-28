@@ -106,6 +106,8 @@ class GridSearch:
                             for amt_epochs in self._epochs:
                                 if self._verbose != 0:
                                     print(f'---Count: {count}, Epochs: {amt_epochs}, Weight_Decay: {weight_decay}, Learning_Rate: {learning_rate}, Batch_Size: {bs}, First Dim: {first_dim}, Encode Dim: {encode_dim}---\n')
+                                else:
+                                    print("Next cycle")
 
                                 trained_model, loss = self.training(loader, learning_rate, weight_decay, amt_epochs, first_dim, encode_dim)
                                 cur_dict = {"Epochs": 0, "Learning Rate": 0, 

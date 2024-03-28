@@ -1,0 +1,1082 @@
+{
+    "1": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.16168265044689178
+    },
+    "2": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.1446867287158966
+    },
+    "3": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.1451641172170639
+    },
+    "4": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.11365222930908203
+    },
+    "5": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.2052527368068695
+    },
+    "6": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.1200774759054184
+    },
+    "7": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.18429413437843323
+    },
+    "8": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.17106442153453827
+    },
+    "9": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.13078200817108154
+    },
+    "10": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.1750575602054596
+    },
+    "11": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.21178776025772095
+    },
+    "12": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.11805883795022964
+    },
+    "13": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.16190659999847412
+    },
+    "14": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 9.867932319641113
+    },
+    "15": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.15017150342464447
+    },
+    "16": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.2553010880947113
+    },
+    "17": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.12959839403629303
+    },
+    "18": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 16,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.1475565880537033
+    },
+    "19": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.15046867728233337
+    },
+    "20": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.14668332040309906
+    },
+    "21": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.19340817630290985
+    },
+    "22": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.10550397634506226
+    },
+    "23": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.16258801519870758
+    },
+    "24": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.14712323248386383
+    },
+    "25": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.19283367693424225
+    },
+    "26": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.1458677500486374
+    },
+    "27": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.12807005643844604
+    },
+    "28": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.18905633687973022
+    },
+    "29": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.1878383308649063
+    },
+    "30": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.10830391943454742
+    },
+    "31": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.22233721613883972
+    },
+    "32": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 6.014554500579834
+    },
+    "33": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 8.497437477111816
+    },
+    "34": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.1918983906507492
+    },
+    "35": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.2744264602661133
+    },
+    "36": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 32,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.15417136251926422
+    },
+    "37": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.11672753095626831
+    },
+    "38": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 6.8738908767700195
+    },
+    "39": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.2526398003101349
+    },
+    "40": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.09996987879276276
+    },
+    "41": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.17777211964130402
+    },
+    "42": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.12110922485589981
+    },
+    "43": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 4.961020469665527
+    },
+    "44": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.20785972476005554
+    },
+    "45": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 7.396895885467529
+    },
+    "46": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.314456969499588
+    },
+    "47": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.1364162266254425
+    },
+    "48": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.16224795579910278
+    },
+    "49": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.1532084196805954
+    },
+    "50": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 5.910029888153076
+    },
+    "51": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 8.245172500610352
+    },
+    "52": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.17591574788093567
+    },
+    "53": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.1651841402053833
+    },
+    "54": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 4,
+        "First Dim": 64,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.16355592012405396
+    },
+    "55": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.15864655375480652
+    },
+    "56": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.15612706542015076
+    },
+    "57": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.14872512221336365
+    },
+    "58": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.1177876815199852
+    },
+    "59": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.21159237623214722
+    },
+    "60": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.1243823766708374
+    },
+    "61": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.1871887445449829
+    },
+    "62": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.1771574318408966
+    },
+    "63": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.13137602806091309
+    },
+    "64": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.17785553634166718
+    },
+    "65": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.21252962946891785
+    },
+    "66": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.12174758315086365
+    },
+    "67": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 6.642454624176025
+    },
+    "68": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.17455483973026276
+    },
+    "69": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.25702086091041565
+    },
+    "70": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.19292908906936646
+    },
+    "71": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.13005374372005463
+    },
+    "72": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 16,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.14851509034633636
+    },
+    "73": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.15617993474006653
+    },
+    "74": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.1442909836769104
+    },
+    "75": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.1972626894712448
+    },
+    "76": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.10632071644067764
+    },
+    "77": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.16902269423007965
+    },
+    "78": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.1501532644033432
+    },
+    "79": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.13934896886348724
+    },
+    "80": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.12650781869888306
+    },
+    "81": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.19922225177288055
+    },
+    "82": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.20076574385166168
+    },
+    "83": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.10984762012958527
+    },
+    "84": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.2218426614999771
+    },
+    "85": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.22111289203166962
+    },
+    "86": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.11948343366384506
+    },
+    "87": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 8.497434616088867
+    },
+    "88": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.1918300837278366
+    },
+    "89": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.3145224153995514
+    },
+    "90": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 32,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.152367502450943
+    },
+    "91": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.16128309071063995
+    },
+    "92": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.18123102188110352
+    },
+    "93": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 7.906924724578857
+    },
+    "94": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.2599738836288452
+    },
+    "95": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.10236722230911255
+    },
+    "96": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 128,
+        "Model": true,
+        "Loss": 0.17575307190418243
+    },
+    "97": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 5.632274627685547
+    },
+    "98": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 4.961019992828369
+    },
+    "99": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.21055448055267334
+    },
+    "100": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.14904335141181946
+    },
+    "101": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.3055878281593323
+    },
+    "102": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 256,
+        "Model": true,
+        "Loss": 0.13369813561439514
+    },
+    "103": {
+        "Epochs": 100,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.17817266285419464
+    },
+    "104": {
+        "Epochs": 500,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.1519913226366043
+    },
+    "105": {
+        "Epochs": 1000,
+        "Learning Rate": 0.001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.19968672096729279
+    },
+    "106": {
+        "Epochs": 100,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.15680623054504395
+    },
+    "107": {
+        "Epochs": 500,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.1766553521156311
+    },
+    "108": {
+        "Epochs": 1000,
+        "Learning Rate": 0.0001,
+        "Weight Decay": 1e-05,
+        "Batch Size": 8,
+        "First Dim": 64,
+        "Encode Dim": 512,
+        "Model": true,
+        "Loss": 0.12406772375106812
+    }
+}
