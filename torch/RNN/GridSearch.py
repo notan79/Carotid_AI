@@ -36,6 +36,7 @@ class GridSearch:
         self._device = device
         
         self._test_set = None
+        self._val_set = None
         
         # Hyperparams:
         self._epochs = epochs
@@ -63,22 +64,24 @@ class GridSearch:
         Returns: tuple with a loader object and the test set
         '''
         
-        PATH = '/groups/francescavitali/eb2/subImages2/H&E'
+        # change to subImages_slide299
+        #PATH = '/groups/francescavitali/eb2/subImages2/H&E' # has 204 images
+        PATH = '/groups/francescavitali/eb2/subImages_slide299/H&E' # has 506 images
 
         tensor_transform = transforms.ToTensor()
 
         dataset = datasets.ImageFolder(PATH, 
                                       transform = tensor_transform) #loads the images
 
-        train_set, test_set = torch.utils.data.random_split(dataset,
-                                                           [194,10],# 70%, 30%
+        train_set, val_set, test_set = torch.utils.data.random_split(dataset,
+                                                           [404,51,51],# 70%, 30%
                                                            generator=torch.Generator(device=self._device))
 
         loader = torch.utils.data.DataLoader(dataset = train_set,
                                             batch_size = BATCH_SIZE,
                                             shuffle = True,
                                             generator=torch.Generator(device=self._device))
-        return (loader, test_set)
+        return (loader, val_set, test_set)
         
         
     def search(self):
@@ -94,10 +97,11 @@ class GridSearch:
         print(f"Starting search with {len(self._epochs) * len(self._lr) * len(self._wd) * len(self._batch_size) * len(self._first_dim) * len(self._encode_dim)} combinations and a early stopping patience of: {self._early_stop_depth}\n") 
               
         for bs in self._batch_size:
-            loader, test_set = self.get_loader(bs)
+            loader, val_set, test_set = self.get_loader(bs)
             
             if not self._test_set:
                 self._test_set = test_set
+                self._val_set = val_set
             
             for first_dim in self._first_dim:
                 for encode_dim in self._encode_dim:
