@@ -160,7 +160,9 @@ class GridSearch:
         model = AE_CNN(first_dim, encode_dim).to(self._device)
         
         optimizer = torch.optim.Adam(model.parameters(), lr = lr, weight_decay = weight_decay)
-        loss_function = torch.nn.BCELoss()
+        #loss_function = torch.nn.BCELoss()
+        loss_function = torch.nn.MSELoss()
+
         
         loss_arr = []
         min_loss = None
