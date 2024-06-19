@@ -6,6 +6,11 @@ import numpy
 import sys
 from AutoEncoderCNN import AE_CNN
 
+import torch.multiprocessing as mp
+from torch.utils.data.distributed import DistributedSampler
+from torch.nn.parallel import DistributedDataParallel as DDP
+from torch.distributed import init_process_group, destroy_process_group
+
 class GridSearch:
     '''
     GridSearch object has twelve attributes. six of the attributes are hyperparameters that are meant to be optimized.
@@ -26,7 +31,9 @@ class GridSearch:
                  batch_size=[16],
                  first_dim = [64],
                  encode_dim=[128],
-                 verbose = 2):
+                 verbose = 2,
+                 path='/groups/francescavitali/eb2/subImages_slide299/H&E',
+                 split=[404, 51,51]):
         
         self._verbose = verbose
         if verbose > 2 or verbose < 0:
@@ -37,6 +44,8 @@ class GridSearch:
         
         self._test_set = None
         self._val_set = None
+        self._path = path
+        self._split = split
         
         # Hyperparams:
         self._epochs = epochs
@@ -66,7 +75,7 @@ class GridSearch:
         
         # change to subImages_slide299
         #PATH = '/groups/francescavitali/eb2/subImages2/H&E' # has 204 images
-        PATH = '/groups/francescavitali/eb2/subImages_slide299/H&E' # has 506 images
+        PATH = self._path 
 
         tensor_transform = transforms.ToTensor()
 
@@ -74,7 +83,7 @@ class GridSearch:
                                       transform = tensor_transform) #loads the images
 
         train_set, val_set, test_set = torch.utils.data.random_split(dataset,
-                                                           [404,51,51],# 70%, 30%
+                                                           self._split,
                                                            generator=torch.Generator(device=self._device))
 
         loader = torch.utils.data.DataLoader(dataset = train_set,
@@ -109,7 +118,7 @@ class GridSearch:
                         for weight_decay in self._wd:
                             for amt_epochs in self._epochs:
                                 if self._verbose != 0:
-                                    print(f'---Count: {count}, Epochs: {amt_epochs}, Weight_Decay: {weight_decay}, Learning_Rate: {learning_rate}, Batch_Size: {bs}, First Dim: {first_dim}, Encode Dim: {encode_dim}---\n')
+                                    print(f'---Count: {count}, Epochs: {amt_epochs}, Weight_Decay: {weight_decay}, Learning_Rate: {learning_rate}, Batch_Size: {bs}---\n')
                                 else:
                                     print("Next cycle")
 
@@ -194,11 +203,11 @@ class GridSearch:
                 
                 # UI
                 if self._verbose == 2:
-                    sys.stdout.write('\r')
                     sys.stdout.write("Epoch: {} [{:{}}] {:.1f}% | Loss: {}".format(epoch+1, "="*count, 
                                                                                len(loader)-1, 
                                                                                (100/(len(loader)-1)*count), 
                                                                                loss.item()))
+                    sys.stdout.write('\r')
                     sys.stdout.flush()
 
                 count += 1

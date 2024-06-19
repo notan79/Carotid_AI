@@ -1,0 +1,21 @@
+WORLD_SIZE=4
+MASTER_ADDR=i18n18
+/var/spool/slurm/d/job3228758/slurm_script: line 24: /torch/.venv/bin/activate: No such file or directory
+Traceback (most recent call last):
+  File "test.py", line 2, in <module>
+Traceback (most recent call last):
+  File "test.py", line 2, in <module>
+    import torch
+ImportError: No module named torch
+    import torch
+ImportError: No module named torch
+Traceback (most recent call last):
+  File "test.py", line 2, in <module>
+Traceback (most recent call last):
+  File "test.py", line 2, in <module>
+    import torch
+ImportError: No module named torch
+    import torch
+ImportError: No module named torch
+srun: error: i18n18: tasks 0-1: Exited with exit code 1
+srun: error: i18n21: tasks 2-3: Exited with exit code 1
