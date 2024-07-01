@@ -29,5 +29,5 @@ torch/lib
 torch/lib64
 torch/share
 torch/pyvenv.cfg
-torch/RNN/ClassifierModels
-torch/RNN/models
+torch/NN/ClassifierModels
+torch/NN/models
