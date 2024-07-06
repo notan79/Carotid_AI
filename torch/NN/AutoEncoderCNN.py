@@ -15,7 +15,7 @@ class AE_CNN(torch.nn.Module):
             torch.nn.Conv2d(half,fourth,8,stride=2,padding=1), # outputs encode_dim, 33, 33
             torch.nn.ReLU(),
             torch.nn.Flatten(),
-            torch.nn.Linear(fourth*33*33, fourth*33*33)
+            torch.nn.Linear(fourth*33*33, fourth*33*33) # add another dense layer to <=1000
         )
         
         self.decoder = torch.nn.Sequential(
