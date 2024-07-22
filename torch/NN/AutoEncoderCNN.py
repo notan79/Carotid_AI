@@ -1,34 +1,54 @@
 import torch
 class AE_CNN(torch.nn.Module):
-    def __init__(self, first_dim=64, encode_dim=128):
+    def __init__(self, dim1:int=64, dim2:int=32, dim3:int=22, encoded_dim:int=2048, rand_mat_dim:int=1024) -> None:
         super().__init__()
         
-        dim = 64
-        half = 32
-        fourth = 26
+        self.encoded_vector = None
+        
+        self.rand_mat = self.create_rand_mat(rand_mat_dim, encoded_dim)
+        
+        self.softmax = torch.nn.Softmax()
         
         self.encoder = torch.nn.Sequential(
-            torch.nn.Conv2d(3,dim,8,stride=2,padding=1), # outputs first_dim, 147, 147
+            torch.nn.Conv2d(3,dim1,8,stride=2,padding=1), # outputs dim1, 147, 147
             torch.nn.ReLU(),
-            torch.nn.Conv2d(dim,half,8,stride=2,padding=1), # outputs _, 71, 71
+            torch.nn.Conv2d(dim1,dim2,8,stride=2,padding=1), # outputs dim2, 71, 71
             torch.nn.ReLU(),
-            torch.nn.Conv2d(half,fourth,8,stride=2,padding=1), # outputs encode_dim, 33, 33
+            torch.nn.Conv2d(dim2,dim3,8,stride=2,padding=1), # outputs dim3, 33, 33
             torch.nn.ReLU(),
             torch.nn.Flatten(),
-            torch.nn.Linear(fourth*33*33, fourth*33*33) # add another dense layer to <=1000
+            torch.nn.Linear(dim3*33*33, dim3*33*33),
+            torch.nn.ReLU(),
+            torch.nn.Linear(dim3*33*33, encoded_dim)
         )
         
         self.decoder = torch.nn.Sequential(
-            torch.nn.Unflatten(1, (fourth, 33, 33)),
-            torch.nn.ConvTranspose2d(fourth,half,8,stride=2,padding=1, output_padding = 1), # outputs _, 71, 71
+            torch.nn.Linear(rand_mat_dim, encoded_dim), # rand_mat_dim -> encoded_dim
             torch.nn.ReLU(),
-            torch.nn.ConvTranspose2d(half,dim,8, stride=2, padding=1, output_padding = 1),
+            torch.nn.Linear(encoded_dim, dim3*33*33),# encoded_dim -> 'flattened dim'
             torch.nn.ReLU(),
-            torch.nn.ConvTranspose2d(dim,3,8, stride=2, padding=1, output_padding = 1),    
+            torch.nn.Unflatten(1, (dim3, 33, 33)),
+            torch.nn.ConvTranspose2d(dim3,dim2,8,stride=2,padding=1, output_padding = 1), 
+            torch.nn.ReLU(),
+            torch.nn.ConvTranspose2d(dim2,dim1,8, stride=2, padding=1, output_padding = 1),
+            torch.nn.ReLU(),
+            torch.nn.ConvTranspose2d(dim1,3,8, stride=2, padding=1, output_padding = 1),    
             torch.nn.Sigmoid()
         )
         
-    def forward(self, x):
-        encoded = self.encoder(x)
-        decoded = self.decoder(encoded)
+    def create_rand_mat(self, rand_mat_dim:int, encoded_dim:int) -> torch.tensor:
+        y = torch.randn(rand_mat_dim, encoded_dim, requires_grad=False, device='cuda' if torch.cuda.is_available() else 'cpu')
+        norm = torch.norm(y, dim = 0)
+        for col in range(len(y[0])):
+            for row in range(len(y)):
+                y[row][col] /= norm[col]
+        return y
+        
+    def forward(self, x) -> torch.tensor:
+        self.encoded_vector = self.softmax(self.encoder(x))
+        all_dps = []
+        for batch in self.encoded_vector:
+            all_dps.append(torch.mv(self.rand_mat, batch))
+        Dp = torch.stack(all_dps)
+        decoded = self.decoder(Dp)
         return decoded

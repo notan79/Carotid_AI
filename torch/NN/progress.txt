@@ -1,0 +1,105 @@
+AE=AE_CNN(
+  (softmax): Softmax(dim=None)
+  (encoder): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(8, 8), stride=(2, 2), padding=(1, 1))
+    (1): ReLU()
+    (2): Conv2d(64, 32, kernel_size=(8, 8), stride=(2, 2), padding=(1, 1))
+    (3): ReLU()
+    (4): Conv2d(32, 22, kernel_size=(8, 8), stride=(2, 2), padding=(1, 1))
+    (5): ReLU()
+    (6): Flatten(start_dim=1, end_dim=-1)
+    (7): Linear(in_features=23958, out_features=23958, bias=True)
+    (8): ReLU()
+    (9): Linear(in_features=23958, out_features=2048, bias=True)
+  )
+  (decoder): Sequential(
+    (0): Linear(in_features=1024, out_features=2048, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=2048, out_features=23958, bias=True)
+    (3): ReLU()
+    (4): Unflatten(dim=1, unflattened_size=(22, 33, 33))
+    (5): ConvTranspose2d(22, 32, kernel_size=(8, 8), stride=(2, 2), padding=(1, 1), output_padding=(1, 1))
+    (6): ReLU()
+    (7): ConvTranspose2d(32, 64, kernel_size=(8, 8), stride=(2, 2), padding=(1, 1), output_padding=(1, 1))
+    (8): ReLU()
+    (9): ConvTranspose2d(64, 3, kernel_size=(8, 8), stride=(2, 2), padding=(1, 1), output_padding=(1, 1))
+    (10): Sigmoid()
+  )
+)
+
+Training:
+
+Epoch: 1 | Loss: 0.0204
+
+
+Epoch: 2 | Loss: 0.0148
+
+
+Epoch: 3 | Loss: 0.0166
+
+
+Epoch: 4 | Loss: 0.0131
+
+
+Epoch: 5 | Loss: 0.0136
+
+
+Epoch: 6 | Loss: 0.0133
+
+
+Epoch: 7 | Loss: 0.0134
+
+
+Epoch: 8 | Loss: 0.0154
+
+
+Epoch: 9 | Loss: 0.0143
+
+
+Epoch: 10 | Loss: 0.0135
+
+
+Epoch: 11 | Loss: 0.0152
+
+
+Epoch: 12 | Loss: 0.0140
+
+
+Epoch: 13 | Loss: 0.0133
+
+
+Epoch: 14 | Loss: 0.0144
+
+
+Epoch: 15 | Loss: 0.0137
+
+
+Epoch: 16 | Loss: 0.0147
+
+
+Epoch: 17 | Loss: 0.0119
+
+
+Epoch: 18 | Loss: 0.0147
+
+
+Epoch: 19 | Loss: 0.0129
+
+
+Epoch: 20 | Loss: 0.0120
+
+
+Epoch: 21 | Loss: 0.0132
+
+
+Epoch: 22 | Loss: 0.0129
+
+
+Epoch: 23 | Loss: 0.0129
+
+
+Epoch: 24 | Loss: 0.0133
+
+
+Epoch: 25 | Loss: 0.0147
+
