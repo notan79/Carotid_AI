@@ -13,7 +13,7 @@ AE=AE_CNN(
     (9): Linear(in_features=23958, out_features=2048, bias=True)
   )
   (decoder): Sequential(
-    (0): Linear(in_features=1600, out_features=2048, bias=True)
+    (0): Linear(in_features=1024, out_features=2048, bias=True)
     (1): ReLU()
     (2): Linear(in_features=2048, out_features=23958, bias=True)
     (3): ReLU()
@@ -29,7 +29,7 @@ AE=AE_CNN(
 
 Training:
 
-Epoch: 1 | Loss: 0.0205
+Epoch: 1 | Loss: 0.0204
 
 
 Epoch: 2 | Loss: 0.0148
@@ -102,49 +102,4 @@ Epoch: 24 | Loss: 0.0133
 
 
 Epoch: 25 | Loss: 0.0147
-
-
-Epoch: 26 | Loss: 0.0144
-
-
-Epoch: 27 | Loss: nan
-
-
-Epoch: 28 | Loss: nan
-
-
-Epoch: 29 | Loss: nan
-
-
-Epoch: 30 | Loss: nan
-
-
-Epoch: 31 | Loss: nan
-
-
-Epoch: 32 | Loss: nan
-
-
-Epoch: 33 | Loss: nan
-
-
-Epoch: 34 | Loss: nan
-
-
-Epoch: 35 | Loss: nan
-
-
-Epoch: 36 | Loss: nan
-
-
-Epoch: 37 | Loss: nan
-
-
-Epoch: 38 | Loss: nan
-
-
-Epoch: 39 | Loss: nan
-
-
-Epoch: 40 | Loss: nan
 
