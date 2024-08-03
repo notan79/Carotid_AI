@@ -1,11 +1,14 @@
 import torch
 class AE_CNN(torch.nn.Module):
-    def __init__(self, dim1:int=64, dim2:int=32, dim3:int=22, encoded_dim:int=2048, rand_mat_dim:int=1024) -> None:
+    def __init__(self, dim1:int=64, dim2:int=32, dim3:int=16, encoded_dim:int=2048, rand_mat_dim:int=1024, rand_mat = True) -> None:
         super().__init__()
         
         self.encoded_vector = None
         
-        self.rand_mat = self.create_rand_mat(rand_mat_dim, encoded_dim)
+        if rand_mat: 
+            self.rand_mat = self.create_rand_mat(rand_mat_dim, encoded_dim)
+        else:
+            self.rand_mat = torch.randn(rand_mat_dim, encoded_dim, requires_grad=False, device='cuda' if torch.cuda.is_available() else 'cpu') # dummy rand matrix of correct dim
         
         self.softmax = torch.nn.Softmax()
         
@@ -14,21 +17,21 @@ class AE_CNN(torch.nn.Module):
             torch.nn.ReLU(),
             torch.nn.Conv2d(dim1,dim2,8,stride=2,padding=1), # outputs dim2, 71, 71
             torch.nn.ReLU(),
-            torch.nn.Conv2d(dim2,dim3,8,stride=2,padding=1), # outputs dim3, 33, 33
+            torch.nn.Conv2d(dim2,dim3,16,stride=4,padding=1), # outputs dim3, 15, 15
             torch.nn.ReLU(),
             torch.nn.Flatten(),
-            torch.nn.Linear(dim3*33*33, dim3*33*33),
+            torch.nn.Linear(dim3*15*15, dim3*15*15),
             torch.nn.ReLU(),
-            torch.nn.Linear(dim3*33*33, encoded_dim)
+            torch.nn.Linear(dim3*15*15, encoded_dim)
         )
         
         self.decoder = torch.nn.Sequential(
             torch.nn.Linear(rand_mat_dim, encoded_dim), # rand_mat_dim -> encoded_dim
             torch.nn.ReLU(),
-            torch.nn.Linear(encoded_dim, dim3*33*33),# encoded_dim -> 'flattened dim'
+            torch.nn.Linear(encoded_dim, dim3*15*15),# encoded_dim -> 'flattened dim'
             torch.nn.ReLU(),
-            torch.nn.Unflatten(1, (dim3, 33, 33)),
-            torch.nn.ConvTranspose2d(dim3,dim2,8,stride=2,padding=1, output_padding = 1), 
+            torch.nn.Unflatten(1, (dim3, 15, 15)),
+            torch.nn.ConvTranspose2d(dim3,dim2,16,stride=4,padding=1, output_padding = 1), 
             torch.nn.ReLU(),
             torch.nn.ConvTranspose2d(dim2,dim1,8, stride=2, padding=1, output_padding = 1),
             torch.nn.ReLU(),
