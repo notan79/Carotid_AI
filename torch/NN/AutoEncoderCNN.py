@@ -1,6 +1,6 @@
 import torch
 class AE_CNN(torch.nn.Module):
-    def __init__(self, dim1:int=64, dim2:int=32, dim3:int=16, encoded_dim:int=2048, rand_mat_dim:int=1024, rand_mat = True) -> None:
+    def __init__(self, encoded_dim:int=2048, rand_mat_dim:int=1024, rand_mat = True) -> None:
         super().__init__()
         
         self.encoded_vector = None
@@ -13,29 +13,84 @@ class AE_CNN(torch.nn.Module):
         self.softmax = torch.nn.Softmax()
         
         self.encoder = torch.nn.Sequential(
-            torch.nn.Conv2d(3,dim1,8,stride=2,padding=1), # outputs dim1, 147, 147
+            torch.nn.Conv2d(3,16,3,stride=1,padding=1), # Outputs: 299 x 299 x 16
             torch.nn.ReLU(),
-            torch.nn.Conv2d(dim1,dim2,8,stride=2,padding=1), # outputs dim2, 71, 71
+            torch.nn.Conv2d(16,32,3,stride=1,padding=1), # Outputs: 299 x 299 x 32
             torch.nn.ReLU(),
-            torch.nn.Conv2d(dim2,dim3,16,stride=4,padding=1), # outputs dim3, 15, 15
+            
+            torch.nn.AvgPool2d(2,stride=2, padding=1), # Outputs: 150 x 150 x 32
+            torch.nn.Conv2d(32,64,3,stride=1,padding=1), # Outputs: 150 x 150 x 64
             torch.nn.ReLU(),
+            
+            torch.nn.AvgPool2d(2,stride=2, padding=1), # Outputs: 76 x 76 x 64
+            torch.nn.Conv2d(64,128,3,stride=1,padding=1), # Outputs: 76 x 76 x 128
+            torch.nn.ReLU(),
+            
+            torch.nn.AvgPool2d(2,stride=2, padding=1), # Outputs: 39 x 39 x 128
+            torch.nn.Conv2d(128,320,3,stride=1,padding=1), # Outputs: 39 x 39 x 320
+            torch.nn.ReLU(),
+            
+            torch.nn.Conv2d(320,240,3,stride=1,padding=1), # Outputs: 39 x 39 x 240
+            torch.nn.ReLU(),
+            
+            torch.nn.Conv2d(240,150,3,stride=1,padding=1), # Outputs: 39 x 39 x 150
+            torch.nn.ReLU(),
+            
+            torch.nn.Conv2d(150,80,3,stride=2,padding=1), # Outputs: 20 x 20 x 80
+            torch.nn.ReLU(),
+            
+            torch.nn.Conv2d(80,40,3,stride=1,padding=1), # Outputs: 20 x 20 x 40
+            torch.nn.ReLU(),
+            
+            torch.nn.Conv2d(40,15,3,stride=1,padding=1), # Outputs: 20 x 20 x 15
+            torch.nn.ReLU(),
+            
+            
             torch.nn.Flatten(),
-            torch.nn.Linear(dim3*15*15, dim3*15*15),
-            torch.nn.ReLU(),
-            torch.nn.Linear(dim3*15*15, encoded_dim)
+            torch.nn.Linear(20*20*15, encoded_dim)
         )
         
         self.decoder = torch.nn.Sequential(
-            torch.nn.Linear(rand_mat_dim, encoded_dim), # rand_mat_dim -> encoded_dim
+            torch.nn.Linear(rand_mat_dim, 20*20*15), # rand_mat_dim -> flattened dim
+            torch.nn.Unflatten(1, (15, 20, 20)),
+            
+            torch.nn.ConvTranspose2d(15,40,3, stride=1, padding=1), 
             torch.nn.ReLU(),
-            torch.nn.Linear(encoded_dim, dim3*15*15),# encoded_dim -> 'flattened dim'
+            
+            torch.nn.ConvTranspose2d(40,80,3, stride=1, padding=1), 
             torch.nn.ReLU(),
-            torch.nn.Unflatten(1, (dim3, 15, 15)),
-            torch.nn.ConvTranspose2d(dim3,dim2,16,stride=4,padding=1, output_padding = 1), 
+            
+            torch.nn.ConvTranspose2d(80,150,3, stride=2, padding=1), 
             torch.nn.ReLU(),
-            torch.nn.ConvTranspose2d(dim2,dim1,8, stride=2, padding=1, output_padding = 1),
+            
+            torch.nn.ConvTranspose2d(150,240,3, stride=1, padding=1), 
             torch.nn.ReLU(),
-            torch.nn.ConvTranspose2d(dim1,3,8, stride=2, padding=1, output_padding = 1),    
+            
+            torch.nn.ConvTranspose2d(240,320,3, stride=1, padding=1), 
+            torch.nn.ReLU(),
+            
+            torch.nn.ConvTranspose2d(320,128,3, stride=1, padding=1), 
+            torch.nn.ReLU(),
+            
+            torch.nn.ConvTranspose2d(128,128,3, stride=2, padding=1), 
+            torch.nn.ReLU(),
+            
+            torch.nn.ConvTranspose2d(128,64,3, stride=1, padding=1), 
+            torch.nn.ReLU(),
+            
+            torch.nn.ConvTranspose2d(64,64,3, stride=2, padding=2), 
+            torch.nn.ReLU(),
+            
+            torch.nn.ConvTranspose2d(64,32,3, stride=1, padding=2), 
+            torch.nn.ReLU(),
+            
+            torch.nn.ConvTranspose2d(32,32,3, stride=2, padding=1), 
+            torch.nn.ReLU(),
+            
+            torch.nn.ConvTranspose2d(32,16,3, stride=1, padding=1), 
+            torch.nn.ReLU(),
+            
+            torch.nn.ConvTranspose2d(16,3,3, stride=1, padding=0), 
             torch.nn.Sigmoid()
         )
         
