@@ -60,8 +60,4 @@ AE=AE_CNN(
 )
 
 Training:
-lr=0.1 | wd=0.98
-NaN loss: nanlr=0.1 | wd=0.5
-NaN loss: nanlr=0.1 | wd=0.1
-NaN loss: nanlr=0.1 | wd=0.01
-NaN loss: nanlr=0.01 | wd=0.98
+lr=0.01 | wd=0.01

@@ -1,6 +1,6 @@
 import torch
 import sys
-from util.custom_loss.custom_loss import mse_loss, sparsity_loss
+from util.custom_loss.custom_loss import mse_loss, sparsity_loss, dirichlet_loss
 import matplotlib.pyplot as plt
 
 def ae_train(AE: torch.nn.Module, train_loader: torch.utils.data.DataLoader, optimizer: torch.optim, EPOCHS:int=100, loss_weights:list=[1,0,0], patience:int=0, verbose:int=1) -> tuple:
@@ -28,7 +28,7 @@ def ae_train(AE: torch.nn.Module, train_loader: torch.utils.data.DataLoader, opt
             image = image.to(device)
             decoded = AE(image)
 
-            loss = loss_weights[0]*mse_loss(decoded, image)  + loss_weights[1]*sparsity_loss(AE.encoded_vector)
+            loss = loss_weights[0]*mse_loss(decoded, image)  + loss_weights[1]*sparsity_loss(AE.encoded_vector) + loss_weights[2]*dirichlet_loss(AE.encoded_vector)
             if is_nan(loss.item()): return (outputs, loss_arr)
             
             loss.backward()
