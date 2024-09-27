@@ -78,8 +78,8 @@ def ui_secondary(verbose:int, epoch:int, count:int, length:int, loss:torch.Tenso
     if verbose == 2:
         sys.stdout.write('\r')
         sys.stdout.write("Epoch: {} [{:{}}] {:.1f}% | Loss: {}".format(epoch+1, "="*count, 
-                                                                   len(train_loader)-1, 
-                                                                   (100/(len(train_loader)-1)*count), 
+                                                                   length-1, 
+                                                                   (100/(length-1))*count, 
                                                                    loss.item()))
         sys.stdout.flush()
 

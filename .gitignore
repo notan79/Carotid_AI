@@ -31,3 +31,4 @@ torch/share
 torch/pyvenv.cfg
 torch/NN/ClassifierModels
 torch/NN/models
+torch/NN/pill_data
