@@ -1,0 +1,5 @@
+Encoder=<class '__main__.Encoder'>
+
+Decoder=<class '__main__.Decoder'>
+
+Training:

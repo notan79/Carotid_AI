@@ -32,3 +32,12 @@ torch/pyvenv.cfg
 torch/NN/ClassifierModels
 torch/NN/models
 torch/NN/pill_data
+torchNew/torch/NN/pill_data
+torchNew/torch/bin
+torchNew/torch/include
+torchNew/torch/lib
+torchNew/torch/lib64
+torchNew/torch/share
+torchNew/torch/pyvenv.cfg
+torchNew/torch/NN/ClassifierModels
+torchNew/torch/NN/models
