@@ -3,3 +3,65 @@ Encoder=<class '__main__.Encoder'>
 Decoder=<class '__main__.Decoder'>
 
 Training:
+
+Epoch: 1 | Loss: 0.0476
+
+
+Epoch: 2 | Loss: 0.0283
+
+
+Epoch: 3 | Loss: 0.0249
+
+
+Epoch: 4 | Loss: 0.0210
+
+
+Epoch: 5 | Loss: 0.0224
+
+
+Epoch: 6 | Loss: 0.0188
+
+
+Epoch: 7 | Loss: 0.0206
+
+
+Epoch: 8 | Loss: 0.0179
+
+
+Epoch: 9 | Loss: 0.0202
+
+
+Epoch: 10 | Loss: 0.0208
+
+
+Epoch: 11 | Loss: 0.0187
+
+
+Epoch: 12 | Loss: 0.0179
+
+
+Epoch: 13 | Loss: 0.0198
+
+
+Epoch: 14 | Loss: 0.0206
+
+
+Epoch: 15 | Loss: 0.0230
+
+
+Epoch: 16 | Loss: 0.0178
+
+
+Epoch: 17 | Loss: 0.0201
+
+
+Epoch: 18 | Loss: 0.0176
+
+
+Epoch: 19 | Loss: 0.0190
+
+
+Epoch: 20 | Loss: 0.0186
+
+Saved
+
