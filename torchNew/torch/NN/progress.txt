@@ -1,67 +1,69 @@
-Encoder=<class '__main__.Encoder'>
+Encoder=<class 'AutoEncoderCNN.Encoder'>
 
-Decoder=<class '__main__.Decoder'>
+Decoder=<class 'AutoEncoderCNN.Decoder'>
 
 Training:
 
-Epoch: 1 | Loss: 0.0632
+Epoch: 1 | Loss: 0.0118
 
 
-Epoch: 2 | Loss: 0.0296
+Epoch: 2 | Loss: 0.0089
 
 
-Epoch: 3 | Loss: 0.0246
+Epoch: 3 | Loss: 0.0096
 
 
-Epoch: 4 | Loss: 0.0200
+Epoch: 4 | Loss: 0.0087
 
 
-Epoch: 5 | Loss: 0.0216
+Epoch: 5 | Loss: 0.0091
 
 
-Epoch: 6 | Loss: 0.0188
+Epoch: 6 | Loss: 0.0066
 
 
-Epoch: 7 | Loss: 0.0220
+Epoch: 7 | Loss: 0.0078
 
 
-Epoch: 8 | Loss: 0.0181
+Epoch: 8 | Loss: 0.0068
 
 
-Epoch: 9 | Loss: 0.0201
+Epoch: 9 | Loss: 0.0070
 
 
-Epoch: 10 | Loss: 0.0200
+Epoch: 10 | Loss: 0.0064
 
 
-Epoch: 11 | Loss: 0.0186
+Epoch: 11 | Loss: 0.0079
 
 
-Epoch: 12 | Loss: 0.0175
+Epoch: 12 | Loss: 0.0065
 
 
-Epoch: 13 | Loss: 0.0193
+Epoch: 13 | Loss: 0.0078
 
 
-Epoch: 14 | Loss: 0.0195
+Epoch: 14 | Loss: 0.0068
 
 
-Epoch: 15 | Loss: 0.0233
+Epoch: 15 | Loss: 0.0070
 
 
-Epoch: 16 | Loss: 0.0179
+Epoch: 16 | Loss: 0.0069
 
 
-Epoch: 17 | Loss: 0.0212
+Epoch: 17 | Loss: 0.0059
 
 
-Epoch: 18 | Loss: 0.0178
+Epoch: 18 | Loss: 0.0078
 
 
-Epoch: 19 | Loss: 0.0196
+Epoch: 19 | Loss: 0.0061
 
 
-Epoch: 20 | Loss: 0.0188
+Epoch: 20 | Loss: 0.0070
 
 Saved
+
+[0.01180077064782381, 0.008945053443312645, 0.009578907862305641, 0.008720776066184044, 0.00905766524374485, 0.006628755014389753, 0.007776562590152025, 0.006818423047661781, 0.0069625782780349255, 0.006408098619431257, 0.007923334836959839, 0.006499624345451593, 0.007809664588421583, 0.006809859070926905, 0.006979787722229958, 0.006852978840470314, 0.005941849201917648, 0.0077903987839818, 0.006133713759481907, 0.0069613163359463215]
 
