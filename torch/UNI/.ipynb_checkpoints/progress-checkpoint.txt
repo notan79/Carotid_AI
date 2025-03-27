@@ -1,0 +1,28 @@
+class_model=Classifier(
+  (nn): Sequential(
+    (0): Linear(in_features=1536, out_features=1024, bias=True)
+    (1): GELU(approximate='none')
+    (2): Linear(in_features=1024, out_features=512, bias=True)
+    (3): GELU(approximate='none')
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): GELU(approximate='none')
+    (6): Linear(in_features=256, out_features=128, bias=True)
+    (7): GELU(approximate='none')
+    (8): Linear(in_features=128, out_features=64, bias=True)
+    (9): GELU(approximate='none')
+    (10): Linear(in_features=64, out_features=32, bias=True)
+    (11): GELU(approximate='none')
+    (12): Linear(in_features=32, out_features=16, bias=True)
+    (13): GELU(approximate='none')
+    (14): Linear(in_features=16, out_features=8, bias=True)
+    (15): GELU(approximate='none')
+    (16): Linear(in_features=8, out_features=4, bias=True)
+    (17): GELU(approximate='none')
+    (18): Linear(in_features=4, out_features=2, bias=True)
+    (19): GELU(approximate='none')
+    (20): Linear(in_features=2, out_features=1, bias=True)
+    (21): Sigmoid()
+  )
+)
+
+Training:

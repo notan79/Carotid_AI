@@ -1,0 +1,51 @@
+class_model=Classifier(
+  (nn): Sequential(
+    (0): Linear(in_features=1536, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): GELU(approximate='none')
+    (3): Linear(in_features=1024, out_features=512, bias=True)
+    (4): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): GELU(approximate='none')
+    (6): Linear(in_features=512, out_features=256, bias=True)
+    (7): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): GELU(approximate='none')
+    (9): Linear(in_features=256, out_features=128, bias=True)
+    (10): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): GELU(approximate='none')
+    (12): Linear(in_features=128, out_features=64, bias=True)
+    (13): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (14): GELU(approximate='none')
+    (15): Linear(in_features=64, out_features=32, bias=True)
+    (16): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (17): GELU(approximate='none')
+    (18): Linear(in_features=32, out_features=16, bias=True)
+    (19): BatchNorm1d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (20): GELU(approximate='none')
+    (21): Linear(in_features=16, out_features=8, bias=True)
+    (22): BatchNorm1d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (23): GELU(approximate='none')
+    (24): Linear(in_features=8, out_features=4, bias=True)
+    (25): BatchNorm1d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (26): GELU(approximate='none')
+    (27): Linear(in_features=4, out_features=2, bias=True)
+    (28): BatchNorm1d(2, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (29): GELU(approximate='none')
+    (30): Linear(in_features=2, out_features=1, bias=True)
+    (31): BatchNorm1d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (32): Sigmoid()
+  )
+)
+
+Training:
+
+Epoch: 1 | Loss: 0.8109
+
+
+Epoch: 2 | Loss: 0.3736
+
+
+Epoch: 3 | Loss: 0.8108
+
+
+Epoch: 4 | Loss: 0.3602
+

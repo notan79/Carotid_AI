@@ -42,3 +42,9 @@ torch/NN/.ipynb_checkpoints/pill_main_NIH-checkpoint.ipynb
 torch/NN/__pycache__
 torch/NN/temp.ipynb
 torch/NN/.ipynb_checkpoints/temp-checkpoint.ipynb
+torch/UNI/assets
+torch/UNI/models
+torch/UNI/notebooks
+torch/UNI/uni
+torch/UNI/uni.egg-info
+torch/UNI/README_old.md
