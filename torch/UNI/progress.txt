@@ -31,21 +31,38 @@ class_model=Classifier(
     (28): BatchNorm1d(2, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
     (29): GELU(approximate='none')
     (30): Linear(in_features=2, out_features=1, bias=True)
-    (31): BatchNorm1d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (32): Sigmoid()
+    (31): Sigmoid()
   )
 )
 
 Training:
 
-Epoch: 1 | Loss: 0.8109
+Epoch: 1 | Loss: 0.9495
 
 
-Epoch: 2 | Loss: 0.3736
+Epoch: 2 | Loss: 0.8738
 
 
-Epoch: 3 | Loss: 0.8108
+Epoch: 3 | Loss: 0.9626
 
 
-Epoch: 4 | Loss: 0.3602
+Epoch: 4 | Loss: 0.5520
+
+
+Epoch: 5 | Loss: 0.9493
+
+
+Epoch: 6 | Loss: 0.9556
+
+
+Epoch: 7 | Loss: 0.5229
+
+
+Epoch: 8 | Loss: 0.6543
+
+
+Epoch: 9 | Loss: 0.9802
+
+
+Epoch: 10 | Loss: 0.5265
 

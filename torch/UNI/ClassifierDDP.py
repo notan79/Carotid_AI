@@ -1,9 +1,13 @@
 import torch.nn as nn
+from uni import get_encoder
+
 class Classifier(nn.Module):
     
     def __init__(self, in_features=1536, activation=nn.GELU()):
         super().__init__()
         self.in_features = in_features
+        
+        self.encoder, self.transform = get_encoder(enc_name='uni2-h')
         
         self.nn = nn.Sequential(
             nn.Linear(in_features=self.in_features, out_features=1024),
