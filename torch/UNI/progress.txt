@@ -1,4 +1,10 @@
-class_model=Classifier(
+DDP Training:
+
+Devices: 2
+
+Epoch: 1   |   Device: 1
+
+Classifier(
   (nn): Sequential(
     (0): Linear(in_features=1536, out_features=1024, bias=True)
     (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
@@ -34,35 +40,166 @@ class_model=Classifier(
     (31): Sigmoid()
   )
 )
+Epoch: 1   |   Device: 0
 
-Training:
+---Epoch: 1 on device: 0 | Loss: 0.7726---
 
-Epoch: 1 | Loss: 0.9495
+---Epoch: 1 on device: 1 | Loss: 0.6763---
 
+Epoch: 2   |   Device: 0
 
-Epoch: 2 | Loss: 0.8738
+Epoch: 2   |   Device: 1
 
+---Epoch: 2 on device: 0 | Loss: 0.7524---
 
-Epoch: 3 | Loss: 0.9626
+---Epoch: 2 on device: 1 | Loss: 0.7135---
 
+Epoch: 3   |   Device: 0
 
-Epoch: 4 | Loss: 0.5520
+Epoch: 3   |   Device: 1
 
+---Epoch: 3 on device: 1 | Loss: 0.6592---
 
-Epoch: 5 | Loss: 0.9493
+---Epoch: 3 on device: 0 | Loss: 0.7029---
 
+Epoch: 4   |   Device: 1
 
-Epoch: 6 | Loss: 0.9556
+Epoch: 4   |   Device: 0
 
+---Epoch: 4 on device: 1 | Loss: 0.7161---
 
-Epoch: 7 | Loss: 0.5229
+---Epoch: 4 on device: 0 | Loss: 0.6647---
 
+Epoch: 5   |   Device: 0
 
-Epoch: 8 | Loss: 0.6543
+Epoch: 5   |   Device: 1
 
+---Epoch: 5 on device: 1 | Loss: 0.7555---
 
-Epoch: 9 | Loss: 0.9802
+---Epoch: 5 on device: 0 | Loss: 0.6907---
 
+Epoch: 6   |   Device: 1
 
-Epoch: 10 | Loss: 0.5265
+Epoch: 6   |   Device: 0
 
+---Epoch: 6 on device: 1 | Loss: 0.7362---
+
+---Epoch: 6 on device: 0 | Loss: 0.6565---
+
+Epoch: 7   |   Device: 1
+
+Epoch: 7   |   Device: 0
+
+---Epoch: 7 on device: 1 | Loss: 0.6870---
+
+---Epoch: 7 on device: 0 | Loss: 0.6906---
+
+Epoch: 8   |   Device: 1
+
+Epoch: 8   |   Device: 0
+
+---Epoch: 8 on device: 0 | Loss: 0.7743---
+
+---Epoch: 8 on device: 1 | Loss: 0.7492---
+
+Epoch: 9   |   Device: 0
+
+Epoch: 9   |   Device: 1
+
+---Epoch: 9 on device: 1 | Loss: 0.7724---
+
+---Epoch: 9 on device: 0 | Loss: 0.7104---
+
+Epoch: 10   |   Device: 0
+
+Epoch: 10   |   Device: 1
+
+---Epoch: 10 on device: 1 | Loss: 0.6735---
+
+---Epoch: 10 on device: 0 | Loss: 0.7521---
+
+Epoch: 11   |   Device: 1
+
+Epoch: 11   |   Device: 0
+
+---Epoch: 11 on device: 1 | Loss: 0.7737---
+
+---Epoch: 11 on device: 0 | Loss: 0.7638---
+
+Epoch: 12   |   Device: 1
+
+Epoch: 12   |   Device: 0
+
+---Epoch: 12 on device: 0 | Loss: 0.7563---
+
+---Epoch: 12 on device: 1 | Loss: 0.7406---
+
+Epoch: 13   |   Device: 0
+
+Epoch: 13   |   Device: 1
+
+---Epoch: 13 on device: 1 | Loss: 0.7485---
+
+---Epoch: 13 on device: 0 | Loss: 0.7399---
+
+Epoch: 14   |   Device: 1
+
+Epoch: 14   |   Device: 0
+
+---Epoch: 14 on device: 1 | Loss: 0.7663---
+
+---Epoch: 14 on device: 0 | Loss: 0.7545---
+
+Epoch: 15   |   Device: 0
+
+Epoch: 15   |   Device: 1
+
+---Epoch: 15 on device: 1 | Loss: 0.7448---
+
+---Epoch: 15 on device: 0 | Loss: 0.7742---
+
+Epoch: 16   |   Device: 1
+
+Epoch: 16   |   Device: 0
+
+---Epoch: 16 on device: 1 | Loss: 0.6809---
+
+---Epoch: 16 on device: 0 | Loss: 0.7622---
+
+Epoch: 17   |   Device: 1
+
+Epoch: 17   |   Device: 0
+
+---Epoch: 17 on device: 1 | Loss: 0.7731---
+
+---Epoch: 17 on device: 0 | Loss: 0.6723---
+
+Epoch: 18   |   Device: 0
+
+Epoch: 18   |   Device: 1
+
+---Epoch: 18 on device: 0 | Loss: 0.7716---
+
+---Epoch: 18 on device: 1 | Loss: 0.6474---
+
+Epoch: 19   |   Device: 0
+
+Epoch: 19   |   Device: 1
+
+---Epoch: 19 on device: 1 | Loss: 0.7454---
+
+---Epoch: 19 on device: 0 | Loss: 0.7293---
+
+Epoch: 20   |   Device: 1
+
+Epoch: 20   |   Device: 0
+
+---Epoch: 20 on device: 1 | Loss: 0.7152---
+
+---Epoch: 20 on device: 0 | Loss: 0.7343---
+
+Finished training on rank 0.
+Finished training on rank 1.
+Destroyed process group: 1.
+Saved
+Destroyed process group: 0.

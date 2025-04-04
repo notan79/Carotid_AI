@@ -18,17 +18,16 @@ import os
 from uni import get_encoder
 from Classifier import Classifier
 
-def prepare_dataloader(rank, world_size, transform, batch_size=12, pin_memory=False, num_workers=0):
+def prepare_dataloader(rank, world_size, transform, batch_size=16, pin_memory=False, num_workers=0):
     MAIN_PATH = '/groups/francescavitali/eb2/NewsubSubImages4/H&E'
 
     # Full dataset
     dataset = datasets.ImageFolder(MAIN_PATH, transform = transform)
     
-    SPLIT = [101, 34804, 34804] # for testing
+    SPLIT = [55767, 6971, 6971] 
     
     train_set, _, _ = torch.utils.data.random_split(dataset,
                                                 SPLIT)      # 80%, 10%, 10%
-    print(f'Dataset len: {len(train_set)}')
     
     sampler = DistributedSampler(train_set, num_replicas=world_size, rank=rank, shuffle=True, drop_last=False)
 
@@ -42,37 +41,54 @@ def prepare_dataloader(rank, world_size, transform, batch_size=12, pin_memory=Fa
     return train_loader
 
 
-def main(LR, GAMMA, EPOCHS):
+def main(LR=1e-4, GAMMA=0.02, EPOCHS=4, BATCH_SIZE=16):
+    
+    # initialize multiple processes
     torch.cuda.set_device(int(os.environ["LOCAL_RANK"]))
     dist.init_process_group("nccl")
     rank = dist.get_rank()
     
-    print(f"Start running basic DDP example on rank {rank}.")
-    
+    if rank == 0:
+        # Empty the file
+        with open('progress.txt', 'w') as file:
+            file.write(f"DDP Training:\n\n")
+            
+        # Write to file
+        write_out(f"Devices: {torch.cuda.device_count()}\n")
+        
+    # Get uni encoder and transform
     encoder = torch.load(f'models/encoder.pth').to(rank)
     transform = torch.load(f'models/transform.pth')
     
-    # create model and move it to GPU with id rank
+    # create model and move it to GPU with device id
     device_id = rank % torch.cuda.device_count()
     model = Classifier().to(device_id)
     ddp_model = DDP(model, device_ids=[device_id])
-    print("created ddp")
     
-    train_loader = prepare_dataloader(rank, torch.cuda.device_count(), transform)
-    print(f"Got loader for {rank}.")
+    # Get the loader
+    train_loader = prepare_dataloader(rank, torch.cuda.device_count(), transform, batch_size=BATCH_SIZE)
     
+    # Initialize the optimizer and scheduler
     optimizer = torch.optim.Adam([{'params': ddp_model.parameters(),'lr': LR}])
     scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=GAMMA)
     
+    # Set models to correct mode
     ddp_model.train()
     encoder.eval()
     
-    print("Starting training")
+    if rank == 0:
+        write_out(ddp_model.module)
     
-    print(f"Len: {len(train_loader)}")
+    print(len(train_loader))
+    # Train
     for epoch in range(EPOCHS):
-        print(f"Epoch: {epoch+1}   |   Device: {device_id}")
+        count = 0
+        write_out(f"Epoch: {epoch+1}   |   Device: {device_id}\n")
+        
+        # Set the correct epoch
         train_loader.sampler.set_epoch(epoch)
+        
+        # Loop over all images 
         for img, label in train_loader: 
             optimizer.zero_grad()
 
@@ -88,18 +104,37 @@ def main(LR, GAMMA, EPOCHS):
             loss.backward()
             optimizer.step()
             
-        print(f'---Epoch: {epoch + 1} on device: {device_id} | Loss: {loss.item():.4f}---')
+            if count % 100 == 0 or count == len(train_loader) - 1:
+                print(f'Update: {rank}: {count}\n')
+            count += 1
+        
+        # Update the scheduler
         scheduler.step()
+        write_out(f'---Epoch: {epoch + 1} on device: {device_id} | Loss: {loss.item():.4f}---\n')
     
+    write_out(f"Finished training on rank {rank}.")
+    
+    # Wait for all processes to complete
+    dist.barrier()
+    
+    # Save on master
     if rank == 0:
-        torch.save(ddp_model, f'./models/ddp.pth')
+        torch.save(ddp_model.module, f'./models/ddp.pth')
+        write_out("Saved")
+        
+    # Cleanup
     dist.destroy_process_group()
-    print(f"Finished running basic DDP example on rank {rank}.")
+    write_out(f"Destroyed process group: {rank}.")
+    
+    
+def write_out(s):
+    print(f'{s}\n')
+    with open('progress.txt', 'a') as file:
+        file.write(f"{s}\n")
 
 if __name__ == "__main__":
-    print(f"Devices: {torch.cuda.device_count()}\n")
-    LR = 4.3e-8
-    GAMMA = 0.02
-    EPOCHS = 4
-    main(LR, GAMMA, EPOCHS)
-    print("Done")
+    LR = 1e-10
+    GAMMA = 0.1
+    EPOCHS = 20
+    BATCH_SIZE = 32
+    main(LR, GAMMA, EPOCHS, BATCH_SIZE)
