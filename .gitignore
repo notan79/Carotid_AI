@@ -50,3 +50,4 @@ torch/UNI/uni.egg-info
 torch/UNI/README_old.md
 torch/UNI/__pycache__
 torch/UNI/README.md
+torch/UNI/data

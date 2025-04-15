@@ -1,3 +1,4 @@
+import torch
 import torch.nn as nn
 from uni import get_encoder
 
@@ -54,6 +55,6 @@ class Classifier(nn.Module):
             nn.Sigmoid()
         )
         
-    def forward(self, x):
+    def forward(self, x) -> torch.tensor:
         return self.nn(x)
         
