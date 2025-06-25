@@ -3,14 +3,15 @@ import torch_geometric
 import torch_geometric.nn as geo_nn
 
 class GCN_GAT(torch.nn.Module):
-    def __init__(self, heads=4, activation=torch.nn.ReLU(), conv_activation=torch.relu):
+    def __init__(self, heads=4, activation=torch.nn.ReLU(), conv_activation=torch.relu, dropout=0.):
         super(GCN_GAT, self).__init__()
         self.activation = activation
         self.conv_activation = conv_activation
+        self.dropout = dropout
         
-        self.conv1 = geo_nn.GATv2Conv(in_channels=1536, out_channels=1024, heads=heads, concat=False)  # First layer
-        self.conv2 = geo_nn.GATv2Conv(in_channels=1024, out_channels=512, heads=heads, concat=False)  # Second layer
-        self.conv3 = geo_nn.GATv2Conv(in_channels=512, out_channels=256, heads=heads, concat=False)  # Third layer
+        self.conv1 = geo_nn.GATv2Conv(in_channels=1536, out_channels=1024, heads=heads, dropout=dropout, concat=False)  # First layer
+        self.conv2 = geo_nn.GATv2Conv(in_channels=1024, out_channels=512, heads=heads, dropout=dropout, concat=False)  # Second layer
+        self.conv3 = geo_nn.GATv2Conv(in_channels=512, out_channels=256, heads=heads, dropout=dropout, concat=False)  # Third layer
 
         
         self.mlp = torch.nn.Sequential(
